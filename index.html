@@ -1,284 +1,527 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STAR Restaurant & Bar - 本格インドカレー・ネパール料理</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Arial', sans-serif; 
-      background: linear-gradient(135deg, #0f0f0f 0%, #1a0f0a 50%, #2d1810 100%);
-      color: white;
-      line-height: 1.7;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR Restaurant & Bar - 本格インド・ネパール料理</title>
+    <meta name="description" content="東川口の本格インド・ネパール料理のスター（STAR）。本場のスパイス料理をお楽しみください。">
     
-    .header {
-      background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-      padding: 2rem 0;
-      text-align: center;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.8);
-    }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    .logo {
-      font-size: 4rem;
-      font-weight: bold;
-      color: #d97706;
-      text-shadow: 3px 3px 8px rgba(0,0,0,0.9);
-      margin-bottom: 1rem;
-    }
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    .tagline {
-      font-size: 1.3rem;
-      color: #f1c40f;
-      margin-bottom: 2rem;
-      font-style: italic;
-    }
-    
-    .nav-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    
-    .nav-btn {
-      background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.4s ease;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(217,119,6,0.3);
-    }
-    
-    .nav-btn:hover {
-      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(5,150,105,0.5);
-    }
-    
-    .hero {
-      text-align: center;
-      padding: 6rem 2rem;
-      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6));
-    }
-    
-    .hero h1 {
-      font-size: 5rem;
-      color: #d97706;
-      margin-bottom: 2rem;
-      text-shadow: 4px 4px 8px rgba(0,0,0,0.9);
-    }
-    
-    .hero p {
-      font-size: 2rem;
-      color: #f3f4f6;
-      margin-bottom: 3rem;
-      font-style: italic;
-    }
-    
-    .content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-    
-    .section {
-      margin-bottom: 6rem;
-      padding: 4rem;
-      background: rgba(255,255,255,0.05);
-      border-radius: 25px;
-      border: 2px solid rgba(217,119,6,0.3);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-    }
-    
-    .section h2 {
-      color: #d97706;
-      font-size: 3.5rem;
-      margin-bottom: 3rem;
-      text-align: center;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    }
-    
-    .staff-intro {
-      background: linear-gradient(135deg, #059669 0%, #047857 100%);
-      color: white;
-      padding: 4rem;
-      border-radius: 25px;
-      text-align: center;
-      margin: 4rem 0;
-      box-shadow: 0 15px 50px rgba(5,150,105,0.4);
-    }
-    
-    .staff-intro h3 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #f1c40f;
-    }
-    
-    .staff-intro p {
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-      line-height: 2;
-    }
-    
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 3rem;
-      margin-top: 3rem;
-    }
-    
-    .menu-item {
-      background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
-      padding: 3rem;
-      border-radius: 20px;
-      border-left: 6px solid #d97706;
-      transition: all 0.4s ease;
-    }
-    
-    .menu-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(217,119,6,0.4);
-      border-left-color: #059669;
-    }
-    
-    .menu-item h3 {
-      color: #059669;
-      margin-bottom: 1.5rem;
-      font-size: 1.6rem;
-    }
-    
-    .menu-item p {
-      color: #e5e7eb;
-      line-height: 1.8;
-      font-size: 1.1rem;
-    }
-    
-    .contact {
-      background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-      color: white;
-      padding: 5rem 3rem;
-      text-align: center;
-      margin-top: 5rem;
-      border-radius: 25px;
-      box-shadow: 0 15px 50px rgba(0,0,0,0.5);
-    }
-    
-    .contact h2 {
-      color: #f1c40f;
-      margin-bottom: 3rem;
-      font-size: 3rem;
-    }
-    
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 3rem; }
-      .logo { font-size: 2.5rem; }
-      .nav-buttons { flex-direction: column; align-items: center; }
-      .menu-grid { grid-template-columns: 1fr; }
-      .section { padding: 2rem; }
-      .nav-btn { padding: 0.8rem 1.5rem; }
-    }
-  </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #FFD700;
+            --deep-black: #000000;
+            --warm-white: #FEFEFE;
+            --accent-blue: #4A90E2;
+            --text-gray: #333333;
+            --luxury-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-gray);
+            background: var(--warm-white);
+        }
+        .luxury-header {
+            background: var(--deep-black);
+            color: var(--primary-gold);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .luxury-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.05) 0%, transparent 50%, rgba(255, 215, 0, 0.05) 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 3px;
+        }
+
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .nav-btn {
+            background: var(--luxury-gradient);
+            color: var(--deep-black);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+            filter: brightness(1.1);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero-badge {
+            background: var(--accent-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+        }
+
+        .hero-badge i {
+            margin: 0 0.5rem;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .hero-description.english {
+            font-style: italic;
+            opacity: 0.8;
+            margin-top: 2rem;
+        }
+
+        .manager-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .manager-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .manager-greeting {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .manager-name {
+            font-weight: 600;
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+
+        .menu-section {
+            margin: 4rem 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-gray);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .menu-item .price {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item .description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .services-section {
+            background: var(--deep-black);
+            color: var(--warm-white);
+            padding: 4rem 2rem;
+            margin: 4rem -2rem;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .service-item h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            margin: 4rem -2rem 0;
+        }
+
+        .contact-info {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-item {
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+            color: var(--accent-blue);
+        }
+
+        .footer-signature {
+            margin-top: 3rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 200px;
+            }
+            
+            .manager-section,
+            .services-section,
+            .contact-section {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--luxury-gradient);
+            color: var(--deep-black);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-indicator:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">🌟 STAR Restaurant & Bar 🌟</div>
-    <p class="tagline">本格インド・ネパール料理の殿堂</p>
-    <nav class="nav-buttons">
-      <button class="nav-btn" onclick="scrollToSection('staff')">スタッフ紹介</button>
-      <button class="nav-btn" onclick="scrollToSection('menu')">メニュー</button>
-      <button class="nav-btn" onclick="scrollToSection('services')">サービス</button>
-      <button class="nav-btn" onclick="scrollToSection('contact')">お問い合わせ</button>
-    </nav>
-  </header>
+    <header class="luxury-header">
+        <div class="header-content">
+            <h1 class="logo"><i class="fas fa-star"></i> STAR <i class="fas fa-star"></i></h1>
+            <p class="tagline">Restaurant & Bar</p>
+            <div class="nav-buttons">
+                <a href="#menu" class="nav-btn" onclick="scrollToSection('menu')">
+                    <i class="fas fa-utensils"></i> メニュー
+                </a>
+                <a href="#services" class="nav-btn" onclick="scrollToSection('services')">
+                    <i class="fas fa-concierge-bell"></i> サービス
+                </a>
+                <a href="#contact" class="nav-btn" onclick="scrollToSection('contact')">
+                    <i class="fas fa-phone"></i> お問い合わせ
+                </a>
+            </div>
+        </div>
+    </header>
 
-  <section class="hero">
-    <h1>本格インド・ネパール料理</h1>
-    <p>スパイスと愛情で織りなす、至福の美食体験をあなたに</p>
-  </section>
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i> INDIAN NEPALI <i class="fas fa-star"></i>
+            </div>
+            <h2 class="hero-title">Restaurant & Bar</h2>
+            <p class="hero-description">
+                東川口の本格インド・ネパール料理のスター（STAR）です。
+            </p>
+            <p class="hero-description">
+                本場のスパイス料理をお楽しみください。
+            </p>
+            <p class="hero-description english">
+                It is a star (STAR) of authentic Indian curry and Nepalese cuisine in Higashikawaguchi.
+            </p>
+            <p class="hero-description english">
+                Please enjoy authentic spice dishes.
+            </p>
+        </section>
 
-  <main class="content">
-    <section id="staff" class="section">
-      <h2>🙋‍♂️ マネージャーからのご挨拶</h2>
-      <div class="staff-intro">
-        <h3>マネージャー Ghimire Tara より</h3>
-        <p>ナマステ！STAR Restaurant & Bar へようこそ。</p>
-        <p>私たちは本場ネパール・インドの伝統的なスパイス技術と、日本のおもてなしの心を融合させ、お客様に真の美食体験をお届けしております。</p>
-        <p>厳選されたスパイスから生まれる芳醇な香りと深い味わいを、心を込めてご用意いたします。</p>
-        <p><strong>皆様のお越しを、スタッフ一同心よりお待ちしております。</strong></p>
-      </div>
-    </section>
+        <section class="manager-section">
+            <h2 class="manager-title">マネージャーからのご挨拶</h2>
+            <p class="manager-greeting">
+                いらっしゃいませ！STARレストラン＆バーへようこそ。
+            </p>
+            <p class="manager-greeting">
+                私たちは東川口で本格的なインド・ネパール料理をお楽しみいただけるよう、
+                心を込めて丁寧に調理しております。
+            </p>
+            <p class="manager-greeting">
+                ご家族やご友人との特別なひとときを、ぜひ当店でお過ごしください。
+            </p>
+            <p class="manager-greeting">
+                皆様のお越しを心よりお待ちしております。
+            </p>
+            <p class="manager-name">
+                マネージャー: ギミレ・タラ (Ghimire Tara)
+            </p>
+        </section>
 
-    <section id="menu" class="section">
-      <h2>🍛 シェフ特選メニュー</h2>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <h3>🌶️ プレミアムチキンカレー</h3>
-          <p>本場インドから直輸入したスパイスを独自ブレンド。チキンの旨味とスパイスが絶妙に調和した自慢の逸品です。</p>
-        </div>
-        <div class="menu-item">
-          <h3>🍞 職人手作りナン各種</h3>
-          <p>タンドール窯で焼き上げる本格ナン。プレーン、ガーリック、チーズ、キーマなど豊富なバリエーションをご用意。</p>
-        </div>
-        <div class="menu-item">
-          <h3>🥘 スペシャルタンドリー</h3>
-          <p>高温のタンドール窯で焼き上げるジューシーなチキン。スパイスの香りが食欲をそそる人気No.1メニューです。</p>
-        </div>
-        <div class="menu-item">
-          <h3>🍚 エグゼクティブビリヤニ</h3>
-          <p>香り高いバスマティライスとスパイス、具材を層状に重ねて炊き上げる宮廷料理の傑作をお楽しみください。</p>
-        </div>
-        <div class="menu-item">
-          <h3>🥟 ネパール伝統モモ</h3>
-          <p>ネパールの家庭の味を再現。手包みの蒸し餃子は、特製スパイシーソースでお召し上がりください。</p>
-        </div>
-        <div class="menu-item">
-          <h3>🍺 厳選ドリンクコレクション</h3>
-          <p>スパイス料理に最適なラッシー、本格チャイ、各種ビール、厳選ワインを豊富にご用意しております。</p>
-        </div>
-      </div>
-    </section>
+        <section id="menu" class="menu-section">
+            <h2 class="section-title">おすすめメニュー</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>チキンカレー</h3>
+                    <p class="price">¥1,200</p>
+                    <p class="description">本場のスパイスで煮込んだ自慢のチキンカレー。ナンまたはライスと一緒にお楽しみください。</p>
+                </div>
+                <div class="menu-item">
+                    <h3>タンドリーチキン</h3>
+                    <p class="price">¥1,500</p>
+                    <p class="description">スパイスに漬け込んだチキンをタンドール窯で焼き上げた本格インド料理。</p>
+                </div>
+                <div class="menu-item">
+                    <h3>ビリヤニ</h3>
+                    <p class="price">¥1,400</p>
+                    <p class="description">バスマティライスとスパイスで炊き上げた香り豊かなインドの混ぜご飯。</p>
+                </div>
+                <div class="menu-item">
+                    <h3>ダル</h3>
+                    <p class="price">¥900</p>
+                    <p class="description">豆のカレー。栄養たっぷりで優しい味わいの家庭料理です。</p>
+                </div>
+                <div class="menu-item">
+                    <h3>ナン</h3>
+                    <p class="price">¥400</p>
+                    <p class="description">タンドール窯で焼いたふわふわのナン。プレーン、ガーリック、チーズからお選びください。</p>
+                </div>
+                <div class="menu-item">
+                    <h3>マンゴーラッシー</h3>
+                    <p class="price">¥500</p>
+                    <p class="description">新鮮なマンゴーとヨーグルトのクリーミーなドリンク。辛いお料理によく合います。</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="services" class="section">
-      <h2>🎉 充実のサービス</h2>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <h3>🚚 プレミアムテイクアウト</h3>
-          <p>ご自宅でも本格的な味をそのままお楽しみいただけるよう、特別な容器とパッケージングでご提供いたします。</p>
-        </div>
-        <div class="menu-item">
-          <h3>🎊 パーティー・宴会プラン</h3>
-          <p>歓送迎会、誕生日、記念日など、特別な日のための豪華セットメニューをご用意しております。</p>
-        </div>
-        <div class="menu-item">
-          <h3>🌙 エレガントバータイム</h3>
-          <p>夜の時間帯は落ち着いた雰囲気の中で、お酒と共に軽食やおつまみをお楽しみいただけます。</p>
-        </div>
-      </div>
-    </section>
-  </main>
+        <section id="services" class="services-section">
+            <div class="services-container">
+                <h2 class="section-title" style="color: var(--primary-gold);">サービス</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3>店内でのお食事</h3>
+                        <p>落ち着いた雰囲気の店内で、ゆっくりとお食事をお楽しみいただけます。</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h3>テイクアウト</h3>
+                        <p>ご自宅でも本格的なインド・ネパール料理をお楽しみいただけます。</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>団体予約</h3>
+                        <p>歓送迎会や誕生日パーティーなど、団体でのご利用も承ります。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer id="contact" class="contact">
-    <h2>📞 お問い合わせ・ご予約</h2>
-    <p>本格的なインド・ネパール料理の世界へ、ぜひお越しください</p>
-    <p><strong>🌟 STAR Restaurant & Bar 🌟</strong></p>
-    <p>真心を込めた料理と温かいおもてなしで、皆様をお迎えいたします</p>
-    <p style="margin-top: 2rem; font-style: italic; color: #f1c40f;">
-      "美味しい料理は、人と人を繋ぐ架け橋" - Manager Ghimire Tara
-    </p>
-  </footer>
+        <section id="contact" class="contact-section">
+            <div class="contact-info">
+                <h2 class="section-title">お問い合わせ・ご予約</h2>
+                <div class="contact-item">
+                    <p><strong><i class="fas fa-map-marker-alt"></i> 住所:</strong><br>
+                    本格的なインド・ネパール料理の世界へ、ぜひお越しください</p>
+                </div>
+                <div class="contact-item">
+                    <p><strong><i class="fas fa-phone"></i> STAR Restaurant & Bar 星</strong></p>
+                </div>
+                <div class="contact-item">
+                    <p><strong><i class="fas fa-clock"></i> 営業時間:</strong><br>
+                    <p>夜の時間帯は活気あい雰囲気の中で、お酒と共に軽食やおつまみをお楽しみいただけます。</p>
+                </div>
+                <div class="footer-signature">
+                    <p style="margin-top: 2rem; font-style: italic; color: #1c40f;">"美味しい料理は、人と人を繋ぐ架け橋" - Manager Ghimire Tara</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <script>
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
-  </script>
+    <div class="scroll-indicator" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
