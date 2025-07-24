@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(214, 75%, 56%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Star Restaurant Colors */
+  --star-blue: hsl(214, 75%, 56%);
+  --star-golden: hsl(51, 100%, 50%);
+  --star-deep-blue: hsl(224, 76%, 20%);
+  --star-red: hsl(0, 74%, 42%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(214, 75%, 56%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-inter antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.text-star-blue {
+  color: hsl(214, 75%, 56%);
+}
+
+.text-star-golden {
+  color: hsl(51, 100%, 50%);
+}
+
+.text-star-deep-blue {
+  color: hsl(224, 76%, 20%);
+}
+
+.text-star-red {
+  color: hsl(0, 74%, 42%);
+}
+
+.bg-star-blue {
+  background-color: hsl(214, 75%, 56%);
+}
+
+.bg-star-golden {
+  background-color: hsl(51, 100%, 50%);
+}
+
+.bg-star-deep-blue {
+  background-color: hsl(224, 76%, 20%);
+}
+
+.bg-star-red {
+  background-color: hsl(0, 74%, 42%);
+}
+
+.hover\:bg-star-golden:hover {
+  background-color: hsl(51, 100%, 50%);
+}
+
+.hover\:bg-green-700:hover {
+  background-color: hsl(142, 76%, 36%);
+}
+
+.hover\:bg-yellow-400:hover {
+  background-color: hsl(54, 91%, 59%);
+}
+
+.border-star-blue {
+  border-color: hsl(214, 75%, 56%);
+}
+
+.border-star-golden {
+  border-color: hsl(51, 100%, 50%);
+}

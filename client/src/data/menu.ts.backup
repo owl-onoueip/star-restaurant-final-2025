@@ -1,0 +1,304 @@
+export interface MenuItem {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  category: string;
+}
+
+export const menuCategories = [
+  { id: 'salads', name: 'サラダ', displayName: 'サラダ' },
+  { id: 'stir-fry', name: '炒め料理', displayName: '炒め料理' },
+  { id: 'tandoori', name: 'タンドリー料理', displayName: 'タンドリー料理' },
+  { id: 'snacks', name: 'スナック', displayName: 'スナック' },
+  { id: 'soups', name: 'スープ', displayName: 'スープ' },
+  { id: 'nepali-snacks', name: 'ネパールスナック', displayName: 'ネパールスナック' },
+  { id: 'asian', name: 'アジアン料理', displayName: 'アジアン料理' },
+  { id: 'ice-cream', name: 'アイス', displayName: 'アイス' },
+  { id: 'chicken-curry', name: 'Chicken Curry', displayName: 'Chicken Curry' },
+];
+
+export const menuItems: MenuItem[] = [
+  // サラダ
+  {
+    id: 'green-salad',
+    name: 'グリーンサラダ',
+    description: 'キャベツ。レタス、サニーレタス、トマト、キュウリなどの盛り合せ。',
+    price: 630,
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'salads'
+  },
+  {
+    id: 'tuna-salad',
+    name: 'ツナサラダ',
+    description: '季節の様々な野菜とツナを混ぜてゆでたまごをトッピング。',
+    price: 715,
+    image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'salads'
+  },
+  {
+    id: 'star-special-salad',
+    name: 'スターSP　サラダ',
+    description: 'ニンジン、トマト、大根。きゅうりなどw並べたグリーンサラダ。当店独自のレシピ。',
+    price: 825,
+    image: 'https://images.unsplash.com/photo-1607532941433-304659e8198a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'salads'
+  },
+  {
+    id: 'chana-chat',
+    name: 'チャナチャット',
+    description: 'ひよこ豆、トマト、ニンジン。きゅうりなどの酸味の効いたスパイシーサラダです。',
+    price: 660,
+    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'salads'
+  },
+  {
+    id: 'samosa-chat',
+    name: 'サモサチャット',
+    description: 'サモサとオニオンを混ぜて、上からヨーグルトとスパイスをかけました。',
+    price: 715,
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'salads'
+  },
+  {
+    id: 'mini-green-salad',
+    name: 'ミニグリーンサラダ',
+    description: '新鮮野菜のミニサラダ',
+    price: 475,
+    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'salads'
+  },
+  {
+    id: 'edamame',
+    name: '枝豆',
+    description: '塩味の国産枝豆',
+    price: 385,
+    image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'salads'
+  },
+
+  // 炒め料理
+  {
+    id: 'moyashi-bacon',
+    name: 'もやしベーコン炒め',
+    description: 'スター味付けのもやしとベーコンの炒め',
+    price: 550,
+    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'stir-fry'
+  },
+  {
+    id: 'spinach-bacon',
+    name: 'ホウレン草とベーコン炒め',
+    description: 'スター味付けのホウレン草とベーコンの炒めものです。',
+    price: 550,
+    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'stir-fry'
+  },
+  {
+    id: 'star-special-stirfry',
+    name: 'スターSP炒め',
+    description: '当店のスペシャル炒め料理です。野菜、肉、魚介のコンビネーションをお楽しみください。',
+    price: 990,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'stir-fry'
+  },
+
+  // タンドリー料理
+  {
+    id: 'tandoori-chicken',
+    name: 'タンドリーチキン',
+    description: '大人気のタンドリー焼の骨付きスパイシーチキン料理。２本で630円でも提供しています。',
+    price: 1199,
+    image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'tandoori'
+  },
+  {
+    id: 'mutton-seekh-kabab',
+    name: 'マトンシークカバブ',
+    description: 'マトンひき肉のスパイシー串焼き。タンドール窯でじっくり焼き上げました。２本で630円でも提供しています。',
+    price: 1199,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'tandoori'
+  },
+  {
+    id: 'garlic-tikka',
+    name: 'ガーリックテッカ',
+    description: 'マイルな味の炭焼きチキン。ガーリックの味がたまりません。２本で570円でも提供しています。',
+    price: 1089,
+    image: 'https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'tandoori'
+  },
+  {
+    id: 'chicken-reshmi-kabab',
+    name: 'チキンレシミカバブ',
+    description: 'チキンの胸肉をスパイスに付け込んでタンドール窯で焼きあげました。２本で450円でも提供しています。',
+    price: 880,
+    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'tandoori'
+  },
+
+  // Chicken Curry
+  {
+    id: 'chicken-masala',
+    name: 'チキンマサラ',
+    description: '鶏肉の柔らかいカレー。ドライスパイシーカレー。',
+    price: 989,
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'chicken-curry'
+  },
+  {
+    id: 'butter-chicken',
+    name: 'バターチキン',
+    description: 'トマト＆カシューナッツベースのカレー。バター、クリーム入りのマイルド味。',
+    price: 1078,
+    image: 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'chicken-curry'
+  },
+  {
+    id: 'special-butter-chicken',
+    name: 'スペシャルバターチキン',
+    description: '当店のバターチキンのスペシャルカレー。他では味わえない独自のレシピです。',
+    price: 1298,
+    image: 'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'chicken-curry'
+  },
+  {
+    id: 'chicken-korma',
+    name: 'チキンコルマ',
+    description: 'カシューナッツとココナッツベースのスイートカレー。',
+    price: 1078,
+    image: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'chicken-curry'
+  },
+  {
+    id: 'chicken-spinach',
+    name: 'チキンホウレン草',
+    description: '鶏肉とホウレン草のヘルシーカレー。',
+    price: 1099,
+    image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'chicken-curry'
+  },
+  {
+    id: 'keema-cheese-curry',
+    name: 'キーマチーズカレー',
+    description: 'チキンのひき肉のスパイシーカレー。チーズでトッピングしています。',
+    price: 990,
+    image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'chicken-curry'
+  },
+
+  // スナック
+  {
+    id: 'alu-pakoda',
+    name: 'アルパコタ',
+    description: 'スパイシージャガイモの揚げ料理。',
+    price: 549,
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'snacks'
+  },
+  {
+    id: 'begun-pakoda',
+    name: 'ベイガンパコタ',
+    description: 'なすのインド風天ぷら。',
+    price: 549,
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'snacks'
+  },
+  {
+    id: 'samosa',
+    name: 'サモサ',
+    description: 'スパイシージャガイモ入りの三角形の揚げ料理',
+    price: 660,
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'snacks'
+  },
+  {
+    id: 'momo',
+    name: 'モモ',
+    description: 'ネパール風蒸し餃子。カレー味です。',
+    price: 769,
+    image: 'https://images.unsplash.com/photo-1496412705862-e0088f16f791?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'snacks'
+  },
+
+  // スープ
+  {
+    id: 'vegetable-soup',
+    name: 'ベジタブルスープ',
+    description: '様々な野菜入りのスープ。',
+    price: 440,
+    image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'soups'
+  },
+  {
+    id: 'chicken-soup',
+    name: 'チキンスープ',
+    description: 'チキン入りのスープ',
+    price: 550,
+    image: 'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'soups'
+  },
+
+  // ネパールスナック
+  {
+    id: 'chicken-buna',
+    name: 'チキンブナ',
+    description: 'チキンのネパール風おつまみ',
+    price: 605,
+    image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'nepali-snacks'
+  },
+  {
+    id: 'mutton-buna',
+    name: 'マトンブナ',
+    description: 'ドライマトンのネパール風おつまみ',
+    price: 660,
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'nepali-snacks'
+  },
+
+  // アジアン料理
+  {
+    id: 'vegetable-chowmein',
+    name: 'ベジタブルチャウミン',
+    description: '様々な野菜入りのネパール風焼きそば',
+    price: 660,
+    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'asian'
+  },
+  {
+    id: 'chicken-chowmein',
+    name: 'チキンチャウミン',
+    description: 'チキン入りのネパール風焼きそば',
+    price: 770,
+    image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'asian'
+  },
+  {
+    id: 'ebi-chili',
+    name: 'エビチリ',
+    description: 'チリソースで炒めたエビ。ピーマン、玉ねぎが入っています。',
+    price: 1199,
+    image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'asian'
+  },
+
+  // アイス
+  {
+    id: 'vanilla-ice',
+    name: 'バニラアイス',
+    description: '',
+    price: 275,
+    image: 'https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'ice-cream'
+  },
+  {
+    id: 'mango-ice',
+    name: 'マンゴーアイス',
+    description: '',
+    price: 385,
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
+    category: 'ice-cream'
+  },
+];
