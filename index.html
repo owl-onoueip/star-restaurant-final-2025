@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STAR Restaurant & Bar - 本格インドカレー・ネパール料理</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Arial', sans-serif; 
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a0f0a 50%, #2d1810 100%);
+      color: white;
+      line-height: 1.7;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+      padding: 2rem 0;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.8);
+    }
+    
+    .logo {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #d97706;
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.9);
+      margin-bottom: 1rem;
+    }
+    
+    .tagline {
+      font-size: 1.3rem;
+      color: #f1c40f;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .nav-btn {
+      background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(217,119,6,0.3);
+    }
+    
+    .nav-btn:hover {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(5,150,105,0.5);
+    }
+    
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+    }
+    
+    .hero h1 {
+      font-size: 5rem;
+      color: #d97706;
+      margin-bottom: 2rem;
+      text-shadow: 4px 4px 8px rgba(0,0,0,0.9);
+    }
+    
+    .hero p {
+      font-size: 2rem;
+      color: #f3f4f6;
+      margin-bottom: 3rem;
+      font-style: italic;
+    }
+    
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    
+    .section {
+      margin-bottom: 6rem;
+      padding: 4rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 25px;
+      border: 2px solid rgba(217,119,6,0.3);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+    
+    .section h2 {
+      color: #d97706;
+      font-size: 3.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    
+    .staff-intro {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      color: white;
+      padding: 4rem;
+      border-radius: 25px;
+      text-align: center;
+      margin: 4rem 0;
+      box-shadow: 0 15px 50px rgba(5,150,105,0.4);
+    }
+    
+    .staff-intro h3 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #f1c40f;
+    }
+    
+    .staff-intro p {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      line-height: 2;
+    }
+    
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    
+    .menu-item {
+      background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+      padding: 3rem;
+      border-radius: 20px;
+      border-left: 6px solid #d97706;
+      transition: all 0.4s ease;
+    }
+    
+    .menu-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(217,119,6,0.4);
+      border-left-color: #059669;
+    }
+    
+    .menu-item h3 {
+      color: #059669;
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+    }
+    
+    .menu-item p {
+      color: #e5e7eb;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+    
+    .contact {
+      background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+      color: white;
+      padding: 5rem 3rem;
+      text-align: center;
+      margin-top: 5rem;
+      border-radius: 25px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+    }
+    
+    .contact h2 {
+      color: #f1c40f;
+      margin-bottom: 3rem;
+      font-size: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3rem; }
+      .logo { font-size: 2.5rem; }
+      .nav-buttons { flex-direction: column; align-items: center; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .section { padding: 2rem; }
+      .nav-btn { padding: 0.8rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">🌟 STAR Restaurant & Bar 🌟</div>
+    <p class="tagline">本格インド・ネパール料理の殿堂</p>
+    <nav class="nav-buttons">
+      <button class="nav-btn" onclick="scrollToSection('staff')">スタッフ紹介</button>
+      <button class="nav-btn" onclick="scrollToSection('menu')">メニュー</button>
+      <button class="nav-btn" onclick="scrollToSection('services')">サービス</button>
+      <button class="nav-btn" onclick="scrollToSection('contact')">お問い合わせ</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>本格インド・ネパール料理</h1>
+    <p>スパイスと愛情で織りなす、至福の美食体験をあなたに</p>
+  </section>
+
+  <main class="content">
+    <section id="staff" class="section">
+      <h2>🙋‍♂️ マネージャーからのご挨拶</h2>
+      <div class="staff-intro">
+        <h3>マネージャー Ghimire Tara より</h3>
+        <p>ナマステ！STAR Restaurant & Bar へようこそ。</p>
+        <p>私たちは本場ネパール・インドの伝統的なスパイス技術と、日本のおもてなしの心を融合させ、お客様に真の美食体験をお届けしております。</p>
+        <p>厳選されたスパイスから生まれる芳醇な香りと深い味わいを、心を込めてご用意いたします。</p>
+        <p><strong>皆様のお越しを、スタッフ一同心よりお待ちしております。</strong></p>
+      </div>
+    </section>
+
+    <section id="menu" class="section">
+      <h2>🍛 シェフ特選メニュー</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <h3>🌶️ プレミアムチキンカレー</h3>
+          <p>本場インドから直輸入したスパイスを独自ブレンド。チキンの旨味とスパイスが絶妙に調和した自慢の逸品です。</p>
+        </div>
+        <div class="menu-item">
+          <h3>🍞 職人手作りナン各種</h3>
+          <p>タンドール窯で焼き上げる本格ナン。プレーン、ガーリック、チーズ、キーマなど豊富なバリエーションをご用意。</p>
+        </div>
+        <div class="menu-item">
+          <h3>🥘 スペシャルタンドリー</h3>
+          <p>高温のタンドール窯で焼き上げるジューシーなチキン。スパイスの香りが食欲をそそる人気No.1メニューです。</p>
+        </div>
+        <div class="menu-item">
+          <h3>🍚 エグゼクティブビリヤニ</h3>
+          <p>香り高いバスマティライスとスパイス、具材を層状に重ねて炊き上げる宮廷料理の傑作をお楽しみください。</p>
+        </div>
+        <div class="menu-item">
+          <h3>🥟 ネパール伝統モモ</h3>
+          <p>ネパールの家庭の味を再現。手包みの蒸し餃子は、特製スパイシーソースでお召し上がりください。</p>
+        </div>
+        <div class="menu-item">
+          <h3>🍺 厳選ドリンクコレクション</h3>
+          <p>スパイス料理に最適なラッシー、本格チャイ、各種ビール、厳選ワインを豊富にご用意しております。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <h2>🎉 充実のサービス</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <h3>🚚 プレミアムテイクアウト</h3>
+          <p>ご自宅でも本格的な味をそのままお楽しみいただけるよう、特別な容器とパッケージングでご提供いたします。</p>
+        </div>
+        <div class="menu-item">
+          <h3>🎊 パーティー・宴会プラン</h3>
+          <p>歓送迎会、誕生日、記念日など、特別な日のための豪華セットメニューをご用意しております。</p>
+        </div>
+        <div class="menu-item">
+          <h3>🌙 エレガントバータイム</h3>
+          <p>夜の時間帯は落ち着いた雰囲気の中で、お酒と共に軽食やおつまみをお楽しみいただけます。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="contact">
+    <h2>📞 お問い合わせ・ご予約</h2>
+    <p>本格的なインド・ネパール料理の世界へ、ぜひお越しください</p>
+    <p><strong>🌟 STAR Restaurant & Bar 🌟</strong></p>
+    <p>真心を込めた料理と温かいおもてなしで、皆様をお迎えいたします</p>
+    <p style="margin-top: 2rem; font-style: italic; color: #f1c40f;">
+      "美味しい料理は、人と人を繋ぐ架け橋" - Manager Ghimire Tara
+    </p>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
